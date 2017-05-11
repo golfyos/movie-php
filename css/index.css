@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+
+.bar{
+    height: 8%;
+    background-color: black;
+    color : white;
+    text-align : right;
+}
+.bar .inside{
+    padding-top: 1%;
+    padding-right: 1%;
+}
+.bar .inside a{
+    text-decoration: underline;
+    color:white;
+}
+

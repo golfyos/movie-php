@@ -1,0 +1,5 @@
+1. Login
+2. Review Movie
+3. get Movie
+4. filter category
+5. sort
