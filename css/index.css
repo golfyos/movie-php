@@ -8,12 +8,25 @@ body{
     color : white;
     text-align : right;
 }
+
 .bar .inside{
     padding-top: 1%;
     padding-right: 1%;
+    font-size: 22px;
 }
+
 .bar .inside a{
     text-decoration: underline;
     color:white;
+}
+
+.bar .inside #home, .bar .inside #category{
+    float: left;
+    padding-left: 3%;
+    text-decoration: none;
+}
+
+.bar .inside #home:hover, .bar .inside #category:hover{
+    opacity : 0.8;
 }
 

@@ -1,9 +1,11 @@
 <html>
 
     <head>
+         <link rel="stylesheet" type="text/css" href="./css/register.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
     <body>
+        <div class="detail_register">
         <form action="addUser.php" onsubmit="return validatePassword()" method="post">
             First Name: <input type="text" name="fname" required> <br>
             Last Name: <input type="text" name="lname" required> <br>
@@ -13,6 +15,7 @@
             Confirm Password: <input type="password" id="p2" name="cpassword" required> <br>
             <input type="submit" value="submit">
         </form>
+        </div>
     </body>
 
     <script>
