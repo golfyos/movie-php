@@ -1,0 +1,27 @@
+body{
+     background-color: burlywood;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form{
+    font-size: 24px;
+    margin-top: 25%;
+    padding : 5%;
+}
+.detail_register{
+    background-color: rgba(255, 255, 255, .2);
+    width: 40%;
+    margin: auto;
+}
+input{
+    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 2%;
+    font-size: 24px;    
+}
+input[type=submit]{
+    width:20%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 40%;
+}

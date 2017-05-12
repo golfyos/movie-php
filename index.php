@@ -7,9 +7,10 @@
             
             <div class="inside">  
                 <a href="#"> Login</a> &nbsp;|&nbsp; 
-                <a href="./register.php"> Register </a> 
+                <a href="./register.php"> Register </a>
+                    <a href="#" id="home"> Home</a>
+                    <a href="#" id="category"> Category</a> 
             </div>
-            
         </div>
     </body>
 </html>
