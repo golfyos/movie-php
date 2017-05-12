@@ -4,7 +4,6 @@
     </head>
     <body>
         <div class="bar">
-            
             <div class="inside">  
                 <a href="#"> Login</a> &nbsp;|&nbsp; 
                 <a href="./register.php"> Register </a>
