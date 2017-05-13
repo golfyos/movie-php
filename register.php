@@ -5,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
     <body>
-        <div class="detail_register">
+        <div class="detail_reg">
         <form action="addUser.php" onsubmit="return validatePassword()" method="post">
             First Name: <input type="text" name="fname" required> <br>
             Last Name: <input type="text" name="lname" required> <br>
