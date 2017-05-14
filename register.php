@@ -5,18 +5,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
     <body>
-        <div class="detail_reg">
+       
+ <div class="detail_reg">
         <form action="addUser.php" onsubmit="return validatePassword()" method="post">
-            First Name: <input type="text" name="fname" required> <br>
-            Last Name: <input type="text" name="lname" required> <br>
-            Email: <input type="text" id="e" name="email" required> <br>
-            Username: <input type="text" id="username" name="username" required> <br>
-            Password: <input type="password" id="p1" name="password" required> <br>
-            Confirm Password: <input type="password" id="p2" name="cpassword" required> <br>
-            <input type="submit" value="submit">
+         
+           <div class="info">
+                <h1>Register</h1>
+                <input type="text" name="fname" placeholder="First Name" required/>
+                <input type="text" name="lname" placeholder="Last Name" required/>
+                <input type="text" name="email" id="e" placeholder="Email" required/>
+                <input type="text" id="username" name="username" placeholder="Username" required> 
+                <input type="password" id="p1" name="password" placeholder="Password" required> 
+                <input type="password" id="p2" name="cpassword" placeholder="Confirm Password" required>
+                <input type="submit" value="submit">
+            </div>
         </form>
-        </div>
-    </body>
+    </div>
 
     <script>
         window.addEventListener("load", function(){
