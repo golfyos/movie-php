@@ -3,7 +3,7 @@
 
 
 <?php
-    require 'db_config.php';
+    require './config/db_config.php';
     
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
@@ -22,7 +22,7 @@
     $result = $con->query($sql);
 
     if($result !== FALSE){
-        
+        header("Location: index.php");
     }
 
 
@@ -36,4 +36,4 @@
 
 
 
-<?php } else header('Location: ./index.php');?>
+<?php } else header('Location: index.php');?>

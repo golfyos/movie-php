@@ -2,13 +2,12 @@
 
     <head>
          <link rel="stylesheet" type="text/css" href="./css/register.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
        
  <div class="detail_reg">
         <form action="addUser.php" onsubmit="return validatePassword()" method="post">
-         
            <div class="info">
                 <h1>Register</h1>
                 <input type="text" name="fname" placeholder="First Name" required/>
@@ -57,60 +56,78 @@
             var cpwd = document.getElementById("p2");
             var ok = true;
             if(pwd.value != cpwd.value){
-                alert("Not Match");
-                pwd.style.border = "2px solid red";
-                cpwd.style.border = "2px solid red";
+                alert("Pasword Not Match");
+                pwd.style.border = "1px solid red";
+                cpwd.style.border = "1px solid red";
                 ok = false;
             }else{
                 pwd.style.border = "none";
                 cpwd.style.border = "none";
                 //alert("Match");
             }
-            return ok && validateEmail() &&  protectSQLInjection() && checkUsernameExist() && checkEmailExist();
+            var tmp = ok;
+            var tmp2 = validateEmail() &&  protectSQLInjection() && checker() && tmp;
+            return tmp2;
+        }   
+
+        function checker(){
+            var a = checkUsernameExist();
+            var b = checkEmailExist();
+            return a&&b;
+
         }
 
         function checkUsernameExist(){
-            var username = document.getElementById('username').value;
+            var username = document.getElementById('username');
             var ok = false;
-            $.ajax({ 
+            var jqXHR  = $.ajax({ 
                 url : "./phpajax/check_username.php", 
                 type : "POST",
                 async : false,
-                data : {username: username},        
+                data : {username: username.value},        
                 success:  function (response){						
                     if (response==0){
                         ok = false;
-                        alert("Change username");
+                        username.style.border = "1px solid red";
+                        alert("Username is used");
                     }
                     if (response==1){
                         ok = true;
-                        alert("Username Pass");
-                    }                    
+                        username.style.border = "1px solid #ccc";
+                        //console.log("Username Pass");
+                    }         
                 }
             });	 
+
+            
             return ok;
+            
         }
 
         function checkEmailExist(){
-            var email = document.getElementById('e').value;
+            var email = document.getElementById('e');
             var ok = false;
             $.ajax({ 
                 url : "./phpajax/check_email.php", 
                 type : "POST",
                 async : false,
-                data : {email: email},        
+                data : {email: email.value},        
                 success:  function (response){						
                     if (response==0){
                         ok = false;
-                        alert("Change Email");
+                        email.style.border = "1px solid red";
+                        alert("Email is used");
                     }
                     if (response==1){
+                        email.style.border = "1px solid #ccc";
                         ok = true;
-                        alert("Email Pass");
-                    }                    
+                        //console.log("Email Pass");
+                    }      
                 }
             });	 
+
             return ok;
+            
         }
     </script>
 </html>

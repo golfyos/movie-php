@@ -1,5 +1,5 @@
 <?php
-    require 'db_config.php';
+    require '../config/db_config.php';
     $email = $_POST["email"];
     $sql = "SELECT * FROM user WHERE email = '$email'";
     $result = $con->query($sql);
