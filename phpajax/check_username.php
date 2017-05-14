@@ -1,8 +1,9 @@
 <?php
     require '../config/db_config.php';
-    $username = $_POST["username"];
-    $sql = "SELECT * FROM user WHERE uname = '$username'";
-    $result = $con->query($sql);
+    
+    $username   = $_POST["username"];
+    $sql        = "SELECT * FROM user WHERE uname = '$username'";
+    $result     = $con->query($sql);
 
     if($result === FALSE){
         echo "0";

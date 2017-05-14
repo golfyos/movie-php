@@ -20,13 +20,15 @@
             </div>
         </form>
     </div>
-
+    
     <script>
         window.addEventListener("load", function(){
+            
         });
 
         function protectSQLInjection(){
             var input = document.querySelectorAll("form input");
+
             for(var i=0;i<input.length;i++){
                 var str = input[i].value;
                 for(var j=0;j<str.length;j++){
@@ -41,9 +43,10 @@
         }
 
         function validateEmail(){
-            var email = document.getElementById("e");
-            var regex = /[\S]+@[\S]+\.[\S]+/;
-            var ok = true;
+            var email   = document.getElementById("e");
+            var regex   = /[\S]+@[\S]+\.[\S]+/;
+            var ok      = true;
+
             if(!regex.test(email.value)){
                 alert("email not true");
                 ok = false;
@@ -52,21 +55,22 @@
         }
 
         function validatePassword(){
-            var pwd = document.getElementById("p1");
-            var cpwd = document.getElementById("p2");
-            var ok = true;
+            var pwd     = document.getElementById("p1");
+            var cpwd    = document.getElementById("p2");
+            var ok      = true;
+
             if(pwd.value != cpwd.value){
                 alert("Pasword Not Match");
-                pwd.style.border = "1px solid red";
-                cpwd.style.border = "1px solid red";
+                pwd.style.border    = "1px solid red";
+                cpwd.style.border   = "1px solid red";
                 ok = false;
             }else{
-                pwd.style.border = "none";
-                cpwd.style.border = "none";
+                pwd.style.border    = "none";
+                cpwd.style.border   = "none";
                 //alert("Match");
             }
-            var tmp = ok;
-            var tmp2 = validateEmail() &&  protectSQLInjection() && checker() && tmp;
+            var tmp     = ok;
+            var tmp2    = validateEmail() &&  protectSQLInjection() && checker() && tmp;
             return tmp2;
         }   
 
@@ -74,18 +78,17 @@
             var a = checkUsernameExist();
             var b = checkEmailExist();
             return a&&b;
-
         }
 
         function checkUsernameExist(){
-            var username = document.getElementById('username');
-            var ok = false;
-            var jqXHR  = $.ajax({ 
-                url : "./phpajax/check_username.php", 
-                type : "POST",
-                async : false,
-                data : {username: username.value},        
-                success:  function (response){						
+            var username    = document.getElementById('username');
+            var ok          = false;
+            $.ajax({ 
+                url     : "./phpajax/check_username.php", 
+                type    : "POST",
+                async   : false,
+                data    : {username: username.value},        
+                success : function (response){						
                     if (response==0){
                         ok = false;
                         username.style.border = "1px solid red";
@@ -105,14 +108,14 @@
         }
 
         function checkEmailExist(){
-            var email = document.getElementById('e');
-            var ok = false;
+            var email   = document.getElementById('e');
+            var ok      = false;
             $.ajax({ 
-                url : "./phpajax/check_email.php", 
-                type : "POST",
-                async : false,
-                data : {email: email.value},        
-                success:  function (response){						
+                url     : "./phpajax/check_email.php", 
+                type    : "POST",
+                async   : false,
+                data    : {email: email.value},        
+                success :  function (response){						
                     if (response==0){
                         ok = false;
                         email.style.border = "1px solid red";
