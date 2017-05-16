@@ -71,5 +71,6 @@ body {
     color: #fff;
 }
 .info input[type="submit"]:hover{
+    cursor : pointer;
     background: #2EBC99;
 }
