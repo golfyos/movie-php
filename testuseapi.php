@@ -43,7 +43,7 @@
         
 
         $sql        = "INSERT INTO movie_detail (id,mname,release_date,category,trailer,poster,description,rating) 
-                    VALUES ('$id','$mname','$release_date','$category','$trailer','$poster',".'"'.$des.'"'.",'$rating')";
+                        VALUES ('$id','$mname','$release_date','$category','$trailer','$poster',".'"'.$des.'"'.",'$rating')";
         $sql2       = "INSERT INTO cast (id,caster)  VALUES ('$id',".'"'.$cast.'"'.")";
         $result     = $con->query($sql);
         $result2    = $con->query($sql2);

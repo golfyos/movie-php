@@ -6,24 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <?php
-    session_start();
-       /* session_start();
-        if(isset($_SESSION["uname"])){
-            echo "<script>
-                    var no = document.getElementById('noSes');
-                    no.style.display = 'none';
-                    var ses = document.getElementById('ses');
-                    ses.style.display = 'inline';
-                </script>";
-        }
-        else{
-             echo "<script>
-                    var no = document.getElementById('noSes');
-                    no.style.display = 'inline';
-                    var ses = document.getElementById('ses');
-                    ses.style.display = 'none';
-                </script>";
-        }*/
+        session_start();
     ?>
     <body>
         <div class="bar">
@@ -39,18 +22,38 @@
                     }
                 ?>
 
-                <a href="#" id="home"> Home</a>
+                <a href="./" id="home"> Home</a>
                 <a href="#" id="category"> Category</a> 
             </div>
         </div>
 
-        <div class="movie">
-            
+        <div class="allMovie">
+            <?php
+                require './config/db_config.php';
+
+                $sql    = "SELECT id,mname,poster FROM movie_detail";
+                $result = $con->query($sql);
+                if($result->num_rows>0){
+                    $i=0;
+                    while($row = $result->fetch_assoc()){
+            ?>
+                            <div class="movie">   
+                                <a href="./detail.php?id=<?=$row["id"]?>">
+                                    <img src="<?= $row["poster"] ?>"> </img>
+                                    <p>  >> <?= $row["mname"] ?></p>
+                                 </a>
+                            </div>
+                        
+                        <hr>
+            <?php   
+                    }
+                }
+            ?>
         </div>
     </body>
 
     <script>
-        window.onload = function(){
+       /* window.onload = function(){
             $.ajax({
                 url     : './phpajax/load_data.php',
                 type    : 'GET',
@@ -59,7 +62,7 @@
 
                 }
             });
-        }
+        }*/
     </script>
 
     
