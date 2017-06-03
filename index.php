@@ -35,18 +35,39 @@
                 $result = $con->query($sql);
                 if($result->num_rows>0){
                     $i=0;
-                    while($row = $result->fetch_assoc()){
+                    $num_column = 1;
             ?>
-                            <div class="movie">   
-                                <a href="./detail.php?id=<?=$row["id"]?>">
-                                    <img src="<?= $row["poster"] ?>"> </img>
-                                    <p>  >> <?= $row["mname"] ?></p>
-                                 </a>
-                            </div>
+            <table>
+                <?php
+                    while($row = $result->fetch_assoc()){
+                          if($num_column == 1)
+                            {
+                ?>
+                        <tr>
+                            <?php } ?>
+                                    <td class="movie">   
+                                        <a href="./detail.php?id=<?=$row["id"]?>">
+                                        <img src="<?= $row["poster"] ?>"> </img>
+                                        <p>   <?= $row["mname"] ?></p>
+                                        </a>
+                                    </td>
+                            <?php
+                            if($num_column == 4){
+                            ?>
+                                </tr>
+                            <?php
+                                // reset num_column
+                                 $num_column = 0;
+         
+                                }     
+                                    $num_column++;
+                                        }
+                                ?>
+                            </table>
                         
-                        <hr>
+                   
             <?php   
-                    }
+                    
                 }
             ?>
         </div>

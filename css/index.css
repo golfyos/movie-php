@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-image: url(https://static1.squarespace.com/static/541ca6ace4b09194f7659e16/t/57e01ff31b631ba91823fcd2/1474306036159/corporate-grey-low-poly-geometric-motion-background-video-animation-hd-1920x1080_nypfik1eg__M0008.jpg?format=1500w);
 }
 
 .bar{
@@ -12,14 +13,20 @@ body{
 .bar .inside{
     padding-top: 1%;
     padding-right: 1%;
-    font-size: 22px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Courier New, Courier, monospace;
 }
 
 .bar .inside a{
-    text-decoration: underline;
+    text-decoration: none;
     color:white;
 }
 
+.bar .inside a:hover{
+     opacity : 0.7;
+     color: yellowgreen;
+}
 .bar .inside #home, .bar .inside #category{
     float: left;
     padding-left: 3%;
@@ -30,3 +37,31 @@ body{
     opacity : 0.7;
 }
 
+.movie:hover{
+    opacity: 0.7;
+}
+
+.movie p{
+    text-decoration: none;
+    margin: 5%;
+    margin-bottom: 5%;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Courier New, Courier, monospace;
+}
+
+.movie a:link{
+    text-decoration: none;
+}
+
+.movie img{
+    border: 1px solid black;
+	box-shadow: 0px 8px 8px 3px gray;
+    margin-top: 10%;
+}
+
+td{
+    text-align: center;
+    width : 25%;
+}
