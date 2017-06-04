@@ -38,15 +38,23 @@
                 if($result->num_rows>0){
                     $row = $result->fetch_assoc();
         ?>
-
-                <h1> <?= $row["mname"] ?>  </h1>
+           <div class="detailmovie">
+               
+                <div id="header"> <?= $row["mname"] ?>  </div>
+                <div class="headmovie">
                 <img src="<?= $row["poster"] ?>" alt="$row["id"]"> </img>
-                <p> <?= $row["release_date"] ?> </p>
-                <p> <?= $row["category"] ?> </p>
+                <p> Release Date : <?= $row["release_date"] ?> </p>
+                <p> Category : <?= $row["category"] ?> </p>
+                </div>
+                <div class="traileranddes">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
-                <p> <?= $row["description"] ?> </p>
-                <p> <?= $row["rating"] ?> </p>
+                </div>
+                <div class="desandrating">
+                <p> Storyline : <?= $row["description"] ?> </p>
+                <p id="rating"> Rating : <?= $row["rating"] ?> </p>
+                </div>
                 
+          </div>      
 
 
         <?php

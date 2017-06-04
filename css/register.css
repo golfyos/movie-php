@@ -2,9 +2,10 @@ body {
   color: #606468;
   font: 24px 'Open Sans', sans-serif;
   margin: 0;
- 
+  background-image: url(https://static1.squarespace.com/static/541ca6ace4b09194f7659e16/t/57e01ff31b631ba91823fcd2/1474306036159/corporate-grey-low-poly-geometric-motion-background-video-animation-hd-1920x1080_nypfik1eg__M0008.jpg?format=1500w);
 }
 .detail_reg{
+    padding-top: 5%;
 	margin: auto;
 }
  .info{
@@ -13,12 +14,12 @@ body {
     margin: 10px auto;
     padding: 16px;
     background: #F7F7F7;
-	-webkit-box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.71);
-	-moz-box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.71);
-	box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.71);
+	-webkit-box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.9);
+	-moz-box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.9);
+	box-shadow: 0px 10px 20px 15px rgba(217,208,217,0.9);
 }
 .info h1{
-    background: #43D1AF;
+    background: #555;
     padding: 20px 0;
     font-size: 45px;
     font-weight: bold;
@@ -50,9 +51,9 @@ body {
 .info input[type="password"]:focus,
 .info select:focus
 {
-    box-shadow: 0 0 5px #43D1AF;
+    box-shadow: 0 0 5px #555;
     padding: 3%;
-    border: 1px solid #43D1AF;
+    border: 1px solid #555;
 }
 
 .info input[type="submit"]{
@@ -63,8 +64,8 @@ body {
     -moz-box-sizing: border-box;
     width: 100%;
     padding: 3%;
-    background: #43D1AF;
-    border-bottom: 2px solid #30C29E;
+    background: #555;
+    border-bottom: 2px solid #555;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;    
@@ -72,5 +73,5 @@ body {
 }
 .info input[type="submit"]:hover{
     cursor : pointer;
-    background: #2EBC99;
+    background: #555;
 }
