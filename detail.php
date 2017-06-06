@@ -55,8 +55,8 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="desandrating">
-                <p> Storyline : <?= $row["description"] ?> </p>
-                <p id="rating"> Rating : <?= $row["rating"] ?> </p>
+                <p><span style="color: blue;">Storyline : </span> <?= $row["description"] ?> </p>
+                <p id="rating"><span style="color: blue;"> Rating : </span><?= $row["rating"] ?> </p>
                 </div>
                 
           </div>      
@@ -67,16 +67,16 @@
 
            
         ?>
-
-        <p>Casts:</p>
+        <div class="caster">
+        <p style="color: blue;">Casts:</p>
         <?php 
             $str = explode(",",$row2["caster"]);
             for($k=0;$k<count($str);$k++){
-                echo $str[$k]."<br>";
+                echo $str[$k]."<br><br>";
             }
 
         ?>
-
+        </div>
         <?php
             if(isset($_POST["comment"]) && !empty(isset($_POST["comment"]))){
                 $strr = $_SESSION["fname"]."  ".$_SESSION["lname"];
@@ -92,8 +92,8 @@
                 //header("Location: ./detail.php?id=$id");
             }
         ?>
-
-        <p> Review: </p>
+        <div class="review">
+        <p style="color: blue;"> Review: </p>
             <form action="?id=<?= $id ?>" method="post">
                 <?php if($check) { ?>
                     <input type="text" id="comment" name="comment" value="">
@@ -102,7 +102,7 @@
                 <?php } ?>
                 <button type="submit">Send</button>            
             </form>
-
+            
 
         <?php
             $sql3 = "SELECT * FROM review WHERE id = '$id'";
@@ -112,7 +112,7 @@
                 while($row3 = $result3->fetch_assoc()){
                     echo $row3['uname']."  ";
                     echo $row3['dated']."<br>";
-                    echo $row3['comment']."<br>";
+                    echo $row3['comment']."<br><br>";
                 }
 
             }
