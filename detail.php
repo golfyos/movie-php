@@ -10,13 +10,16 @@
             <div class="inside"> 
                 <?php 
                 session_start();
+                $check = false;
                     if(isset($_SESSION["uname"])){
                         echo ' <a href="./profile.php">' .$_SESSION["fname"]."  ".$_SESSION["lname"].'</a> &nbsp;|&nbsp; 
                                 (<a href="./logout.php">Logout</a>)';
+                        $check = true;
                                 
                     }else{
                         echo ' <a id="login" href="./login.php"> Login</a> &nbsp;|&nbsp; 
                                 <a id="register" href="./register.php"> Register </a>';
+                        $check = false;
                     }
                 ?>
 
@@ -33,8 +36,10 @@
             if(isset($_GET["id"])){
                 $id     = $_GET["id"];
                 $sql    = "SELECT * FROM movie_detail WHERE id = '$id'";
+                $sql2   = "SELECT caster FROM cast WHERE id ='$id'";
                 $result = $con -> query($sql);
-
+                $result2= $con -> query($sql2);
+                $row2     = $result2->fetch_assoc();
                 if($result->num_rows>0){
                     $row = $result->fetch_assoc();
         ?>
@@ -60,9 +65,63 @@
         <?php
                 }
 
+           
+        ?>
+
+        <p>Casts:</p>
+        <?php 
+            $str = explode(",",$row2["caster"]);
+            for($k=0;$k<count($str);$k++){
+                echo $str[$k]."<br>";
+            }
+
+        ?>
+
+        <?php
+            if(isset($_POST["comment"]) && !empty(isset($_POST["comment"]))){
+                $strr = $_SESSION["fname"]."  ".$_SESSION["lname"];
+                $com = $_POST["comment"];
+                
+                $timezone  = 7; //(GMT -5:00) EST (U.S. & Canada) 
+                $date = gmdate("j/m/Y H:i:s", time() + 3600*($timezone)); 
+
+                $sql4 = "INSERT INTO review (id,uname,comment,dated) VALUES ('$id','$strr','$com','$date') ";
+                $result4 = $con->query($sql4);
+
+
+                //header("Location: ./detail.php?id=$id");
             }
         ?>
 
+        <p> Review: </p>
+            <form action="?id=<?= $id ?>" method="post">
+                <?php if($check) { ?>
+                    <input type="text" id="comment" name="comment" value="">
+                <?php } else {?>
+                    <input type="text" placeholder="Please Login " disabled>
+                <?php } ?>
+                <button type="submit">Send</button>            
+            </form>
+
+
+        <?php
+            $sql3 = "SELECT * FROM review WHERE id = '$id'";
+            $result3 = $con->query($sql3);
+            if($result3->num_rows>0){
+
+                while($row3 = $result3->fetch_assoc()){
+                    echo $row3['uname']."  ";
+                    echo $row3['dated']."<br>";
+                    echo $row3['comment']."<br>";
+                }
+
+            }
+        ?>
+
+
+        <?php
+             } #close if
+        ?>
 
     </body>
 
