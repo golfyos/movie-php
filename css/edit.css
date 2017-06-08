@@ -9,7 +9,6 @@ body {
     background-color: black;
     color : white;
     text-align : right;
-    overflow: auto;
 }
 
 .bar .inside{
