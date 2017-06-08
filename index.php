@@ -24,6 +24,14 @@
 
                 <a href="./" id="home"> Home</a>
                 <a href="#" id="category"> Category</a> 
+                <a href="./category.php?c=sci-fi"> <span id="sci"> Sci-Fi  </span> </a>
+                <a href="./category.php?c=adventure"> <span id="adventure"> Adventure  </span> </a>
+                <a href="./category.php?c=drama"> <span id="drama"> Drama  </span> </a>
+                <a href="./category.php?c=fantasy"> <span id="fantasy"> Fantasy  </span> </a>
+                <a href="./category.php?c=action"> <span id="action"> Action  </span> </a>
+                <a href="./category.php?c=comedy"> <span id="comedy"> Comedy  </span> </a>
+                <a href="./category.php?c=animation"> <span id="animation"> Animation  </span> </a>
+
             </div>
         </div>
 
@@ -84,6 +92,8 @@
                 }
             });
         }*/
+
+        
     </script>
 
     

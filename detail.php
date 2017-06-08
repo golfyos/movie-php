@@ -47,36 +47,31 @@
                
                 <div id="header"> <?= $row["mname"] ?>  </div>
                 <div class="headmovie">
-                <p><img src="http://clipart.pd4pic.com/images/3d-gold-star-clipart-no-background-9.jpg"
-                style=" width : 25px; height : 25px;">
-                <span id="rating" style="font-size : 30px;"><span style="color: blue;"> Rating : </span><?= $row["rating"] ?> </span><p>
-                <img id="movie_poster" src="<?= $row["poster"] ?>" alt="$row["id"]"> </img>
-                <p> Release Date : <?= $row["release_date"] ?> </p>
-                <p> Category : <?= $row["category"] ?> </p>
+                    <p><img src="http://clipart.pd4pic.com/images/3d-gold-star-clipart-no-background-9.jpg"
+                    style=" width : 25px; height : 25px;">
+                    <span id="rating" style="font-size : 30px;"><span style="color: blue;"> Rating : </span><?= $row["rating"] ?> </span><p>
+                    <img id="movie_poster" src="<?= $row["poster"] ?>" alt="$row["id"]"> </img>
+                    <p> Release Date : <?= $row["release_date"] ?> </p>
+                    <p> Category : <?= $row["category"] ?> </p>
                 </div>
                 <div class="traileranddes">
-                <iframe src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
+                     <iframe src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="des">
-                <p><span style="color: blue;">Storyline : </span> <?= $row["description"] ?> </p>  
-        
-             
-
-
+                    <p><span style="color: blue;">Storyline : </span> <?= $row["description"] ?> </p>  
+                
         <?php
                 }
-
-           
         ?>
         <div class="caster">
-        <p style="color: blue;">Casts:</p>
-        <?php 
-            $str = explode(",",$row2["caster"]);
-            for($k=0;$k<count($str);$k++){
-                echo $str[$k]."<br><br>";
-            }
+            <p style="color: blue;">Casts:</p>
+            <?php 
+                $str = explode(",",$row2["caster"]);
+                for($k=0;$k<count($str);$k++){
+                    echo $str[$k]."<br><br>";
+                }
 
-        ?>
+            ?>
         </div>
       
         <?php
@@ -89,9 +84,6 @@
 
                 $sql4 = "INSERT INTO review (id,uname,comment,dated) VALUES ('$id','$strr','$com','$date') ";
                 $result4 = $con->query($sql4);
-
-
-                //header("Location: ./detail.php?id=$id");
             }
         ?>
         <div class="review">
@@ -113,7 +105,6 @@
         <?php
                 while($row3 = $result3->fetch_assoc()){
         ?>
-
                     <div class="comment"><?php
                     echo $row3['uname']."  ";
                     echo $row3['dated']."<br>";
