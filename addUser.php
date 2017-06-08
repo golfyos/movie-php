@@ -21,7 +21,8 @@
         $_SESSION["lname"] = $lname;
         $_SESSION["email"] = $email;
         $_SESSION["uname"] = $username;
-        header("Location: ./");
+
+        header("Location: ./success.php");
     }
 ?>
 

@@ -5,85 +5,7 @@
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <style>
-        .bar .inside .dropbtn {
-        height : 70%;
-            background-color: black;
-            color: white;
-            padding: 16px;
-            padding-top: 1%;
-            padding-right: 1%;
-            font-size: 28px;
-            font-weight: bold;
-            font-family: Courier New, Courier, monospace;
-            border: none;
-            cursor: pointer;
-        }
-
-        .bar .inside .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .bar .inside .dropdown-content {
-            display: none;
-            position: absolute;
-            color : white;
-            background-color: black;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .bar .inside .dropdown-content a {
-            background-color: black;
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .bar .inside .dropdown-content a:hover {
-            color : yellowgreen;
-        }
-
-        .bar .inside .dropdown:hover .dropdown-content {
-            display: block;
-            background-color: black;
-        }
-
-        .bar .inside .dropdown:hover .dropbtn {
-            color : yellowgreen;
-            background-color: black;    
-        }
-            .alert {
-                padding: 20px;
-                background-color: #f44336;
-                color: white;
-                opacity: 1;
-                transition: opacity 0.6s;
-                margin-bottom: 15px;
-            }
-
-            .alert.success {background-color: #4CAF50;}
-            .alert.info {background-color: #2196F3;}
-            .alert.warning {background-color: #ff9800;}
-
-            .closebtn {
-                margin-left: 15px;
-                color: white;
-                font-weight: bold;
-                float: right;
-                font-size: 22px;
-                line-height: 20px;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-
-            .closebtn:hover {
-                color: black;
-            }
-        </style>
+ 
     </head>
 
     
@@ -134,7 +56,10 @@
                 $sess = $_SESSION["uname"];
                 $sqlUpdate = "UPDATE user SET fname='$fn',lname='$ln',email='$em' WHERE uname='$sess'";
                 $result = $con->query($sqlUpdate);
+                $_SESSION["fname"] = $fn;
+                $_SESSION["lname"] = $ln;
         ?>
+                
                 <div class="alert success" >
                     <span class="closebtn">&times;</span>  
                     <strong>Success!</strong> Redirecting To Profile in 3 seconds.
@@ -189,3 +114,4 @@
 
     
 </html>
+

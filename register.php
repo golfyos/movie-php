@@ -14,8 +14,8 @@
                 <h1>Register</h1>
                 <input type="text" name="fname" placeholder="First Name" required/>
                 <input type="text" name="lname" placeholder="Last Name" required/>
-                <input type="text" name="email" id="e" placeholder="Email" required/>
-                <input type="text" id="username" name="username" placeholder="Username" required> 
+                <input type="text" name="email" id="e" placeholder="Email" onchange="emailChange()" required/>
+                <input type="text" id="username" name="username" placeholder="Username" onchange="usernameChange()" required> 
                 <input type="password" id="p1" name="password" placeholder="Password" required> 
                 <input type="password" id="p2" name="cpassword" placeholder="Confirm Password" required>
                 <input type="submit" value="submit">
@@ -24,8 +24,24 @@
     </div>
     
     <script>
+        function usernameChange(){
+            var username = document.getElementById("username");
+            checkUsernameExist();
+            if(username.value == '') 
+                username.style.border = "2px solid red";
+        }
+        function emailChange(){
+            var e = document.getElementById("e");
+            checkEmailExist();
+            if(e.value == '') 
+                e.style.border = "2px solid red";
+
+            validateEmail();
+        }
+
+        
+
         window.addEventListener("load", function(){
-            
         });
 
         function protectSQLInjection(){
@@ -50,7 +66,7 @@
             var ok      = true;
 
             if(!regex.test(email.value)){
-                alert("email not true");
+                email.style.border = "2px solid red";
                 ok = false;
             }
             return ok;
@@ -63,8 +79,8 @@
 
             if(pwd.value != cpwd.value){
                 alert("Pasword Not Match");
-                pwd.style.border    = "1px solid red";
-                cpwd.style.border   = "1px solid red";
+                pwd.style.border    = "2px solid red";
+                cpwd.style.border   = "2px solid red";
                 ok = false;
             }else{
                 pwd.style.border    = "none";
@@ -72,13 +88,23 @@
                 //alert("Match");
             }
             var tmp     = ok;
-            var tmp2    = validateEmail() &&  protectSQLInjection() && checker() && tmp;
-            return tmp2;
+            var tmpE    = validateEmail();
+            if(!tmpE) alert("Email was wrongs");
+            var tmpS    = protectSQLInjection();
+            var tmpC    = checker(tmpE);
+            var tempLast = tmpE && tmpS && tmpC && tmp;
+            return tempLast;
         }   
 
-        function checker(){
+        function checker(checkE){
             var a = checkUsernameExist();
-            var b = checkEmailExist();
+            if(!a)  alert("Username is used");
+            
+            var b = false;
+            if(checkE){
+                b = checkEmailExist();
+                if(!b) alert("Email is used");
+            }
             return a&&b;
         }
 
@@ -93,12 +119,13 @@
                 success : function (response){						
                     if (response==0){
                         ok = false;
-                        username.style.border = "1px solid red";
-                        alert("Username is used");
+                        username.style.border = "2px solid red";
+                        //alert("Username is used");
                     }
                     if (response==1){
                         ok = true;
-                        username.style.border = "1px solid #ccc";
+                        //username.style.border = "1px solid #ccc";
+                        username.style.border = "2px solid green";
                         //console.log("Username Pass");
                     }         
                 }
@@ -117,12 +144,13 @@
                 success :  function (response){						
                     if (response==0){
                         ok = false;
-                        email.style.border = "1px solid red";
-                        alert("Email is used");
+                        email.style.border = "2px solid red";
+                        //alert("Email is used");
                     }
                     if (response==1){
-                        email.style.border = "1px solid #ccc";
+                        email.style.border = "2px solid green";
                         ok = true;
+                        
                         //console.log("Email Pass");
                     }      
                 }
