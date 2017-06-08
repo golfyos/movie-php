@@ -109,11 +109,17 @@
             $sql3 = "SELECT * FROM review WHERE id = '$id'";
             $result3 = $con->query($sql3);
             if($result3->num_rows>0){
-
+        ?>
+        <?php
                 while($row3 = $result3->fetch_assoc()){
+        ?>
+
+                    <div class="comment"><?php
                     echo $row3['uname']."  ";
                     echo $row3['dated']."<br>";
-                    echo $row3['comment']."<br><br>";
+                    echo $row3['comment']."<br><br>";?>
+                    </div>
+        <?php
                 }
 
             }
