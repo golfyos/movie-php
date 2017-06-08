@@ -4,7 +4,7 @@ body{
 }
 
 .bar{
-    height: 8%;
+    height : 8%;
     background-color: black;
     color : white;
     text-align : right;
@@ -24,7 +24,6 @@ body{
 }
 
 .bar .inside a:hover{
-     opacity : 0.7;
      color: yellowgreen;
 }
 
@@ -35,7 +34,7 @@ body{
 }
 
 .bar .inside #home:hover, .bar .inside #category:hover{
-    opacity : 0.7;
+    color : yellowgreen;
 }
 
 .movie:hover{

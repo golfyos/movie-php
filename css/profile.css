@@ -4,8 +4,9 @@ body {
   margin: 0;
   background-image: url(https://static1.squarespace.com/static/541ca6ace4b09194f7659e16/t/57e01ff31b631ba91823fcd2/1474306036159/corporate-grey-low-poly-geometric-motion-background-video-animation-hd-1920x1080_nypfik1eg__M0008.jpg?format=1500w);
 }
+
 .bar{
-    height: 8%;
+    height : 8%;
     background-color: black;
     color : white;
     text-align : right;
@@ -25,7 +26,6 @@ body {
 }
 
 .bar .inside a:hover{
-     opacity : 0.7;
      color: yellowgreen;
 }
 
@@ -36,8 +36,9 @@ body {
 }
 
 .bar .inside #home:hover, .bar .inside #category:hover{
-    opacity : 0.7;
+    color : yellowgreen;
 }
+
 
 .header{
     margin-top: 2%;

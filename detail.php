@@ -4,6 +4,58 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+.bar .inside .dropbtn {
+    background-color: black;
+    color: white;
+    height : 70%;
+    padding: 16px;
+    padding-top: 1%;
+    padding-right: 1%;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Courier New, Courier, monospace;
+    border: none;
+    cursor: pointer;
+}
+
+.bar .inside .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.bar .inside .dropdown-content {
+    display: none;
+    position: absolute;
+    color : white;
+    background-color: black;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.bar .inside .dropdown-content a {
+    background-color: black;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.bar .inside .dropdown-content a:hover {
+    color : yellowgreen;
+}
+
+.bar .inside .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: black;
+}
+
+.bar .inside .dropdown:hover .dropbtn {
+    color : yellowgreen;
+    background-color: black;    
+}
+</style>
     </head>
     <body>
         <div class="bar">
@@ -24,7 +76,22 @@
                 ?>
 
                 <a href="./" id="home"> Home</a>
-                <a href="#" id="category"> Category</a> 
+               <div class="dropdown" id="category">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                <a href="./category.php?c=sci-fi"> <span id="sci"> Sci-Fi  </span> </a>
+                <a href="./category.php?c=adventure"> <span id="adventure"> Adventure  </span> </a>
+                <a href="./category.php?c=drama"> <span id="drama"> Drama  </span> </a>
+                <a href="./category.php?c=fantasy"> <span id="fantasy"> Fantasy  </span> </a>
+                <a href="./category.php?c=action"> <span id="action"> Action  </span> </a>
+                <a href="./category.php?c=comedy"> <span id="comedy"> Comedy  </span> </a>
+                <a href="./category.php?c=animation"> <span id="animation"> Animation  </span> </a>
+                <a href="./category.php?c=horror"> <span id="horror"> Horror  </span> </a>
+                <a href="./category.php?c=thriller"> <span id="thriller"> Thriller  </span> </a>
+                <a href="./category.php?c=romance"> <span id="romance"> Romance  </span> </a>
+                <a href="./category.php?c=crime"> <span id="crime"> Crime  </span> </a>
+                    </div>
+                </div>
             </div>
         </div>
 
