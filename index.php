@@ -4,58 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <style>
-.bar .inside .dropbtn {
-    height : 70%;
-    background-color: black;
-    color: white;
-    padding: 16px;
-    padding-top: 1%;
-    padding-right: 1%;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: Courier New, Courier, monospace;
-    border: none;
-    cursor: pointer;
-}
 
-.bar .inside .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.bar .inside .dropdown-content {
-    display: none;
-    position: absolute;
-    color : white;
-    background-color: black;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.bar .inside .dropdown-content a {
-    background-color: black;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.bar .inside .dropdown-content a:hover {
-    color : yellowgreen;
-}
-
-.bar .inside .dropdown:hover .dropdown-content {
-    display: block;
-    background-color: black;
-}
-
-.bar .inside .dropdown:hover .dropbtn {
-    color : yellowgreen;
-    background-color: black;    
-}
-</style>
     </head>
     <?php
         session_start();
@@ -139,22 +88,5 @@
                 }
             ?>
         </div>
-    </body>
-
-    <script>
-       /* window.onload = function(){
-            $.ajax({
-                url     : './phpajax/load_data.php',
-                type    : 'GET',
-                async   : false,
-                success : function(res){
-
-                }
-            });
-        }*/
-
-        
-    </script>
-
-    
+    </body>  
 </html>
