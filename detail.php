@@ -47,19 +47,20 @@
                
                 <div id="header"> <?= $row["mname"] ?>  </div>
                 <div class="headmovie">
-                <img src="<?= $row["poster"] ?>" alt="$row["id"]"> </img>
+                <p><img src="http://clipart.pd4pic.com/images/3d-gold-star-clipart-no-background-9.jpg"
+                style=" width : 25px; height : 25px;">
+                <span id="rating" style="font-size : 30px;"><span style="color: blue;"> Rating : </span><?= $row["rating"] ?> </span><p>
+                <img id="movie_poster" src="<?= $row["poster"] ?>" alt="$row["id"]"> </img>
                 <p> Release Date : <?= $row["release_date"] ?> </p>
                 <p> Category : <?= $row["category"] ?> </p>
                 </div>
                 <div class="traileranddes">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/<?= $row["trailer"] ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="desandrating">
-                <p><span style="color: blue;">Storyline : </span> <?= $row["description"] ?> </p>
-                <p id="rating"><span style="color: blue;"> Rating : </span><?= $row["rating"] ?> </p>
-                </div>
-                
-          </div>      
+                <div class="des">
+                <p><span style="color: blue;">Storyline : </span> <?= $row["description"] ?> </p>  
+        
+             
 
 
         <?php
@@ -77,6 +78,7 @@
 
         ?>
         </div>
+      
         <?php
             if(isset($_POST["comment"]) && !empty(isset($_POST["comment"]))){
                 $strr = $_SESSION["fname"]."  ".$_SESSION["lname"];
@@ -96,28 +98,34 @@
         <p style="color: blue;"> Review: </p>
             <form action="?id=<?= $id ?>" method="post">
                 <?php if($check) { ?>
-                    <input type="text" id="comment" name="comment" value="">
+                    <textarea rows="8" cols="100" id="comment" name="comment" value=""></textarea>
                 <?php } else {?>
-                    <input type="text" placeholder="Please Login " disabled>
+                    <textarea rows="8" cols="100" placeholder="Please Login " disabled></textarea>
                 <?php } ?>
                 <button type="submit">Send</button>            
             </form>
-            
 
         <?php
             $sql3 = "SELECT * FROM review WHERE id = '$id'";
             $result3 = $con->query($sql3);
             if($result3->num_rows>0){
-
+        ?>
+        <?php
                 while($row3 = $result3->fetch_assoc()){
+        ?>
+
+                    <div class="comment"><?php
                     echo $row3['uname']."  ";
                     echo $row3['dated']."<br>";
-                    echo $row3['comment']."<br><br>";
+                    echo $row3['comment']."<br><br>";?>
+                    </div>
+        <?php
                 }
 
             }
         ?>
-
+        </div>
+        </div>
 
         <?php
              } #close if
