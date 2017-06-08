@@ -31,6 +31,10 @@
                 <a href="./category.php?c=action"> <span id="action"> Action  </span> </a>
                 <a href="./category.php?c=comedy"> <span id="comedy"> Comedy  </span> </a>
                 <a href="./category.php?c=animation"> <span id="animation"> Animation  </span> </a>
+                <a href="./category.php?c=horror"> <span id="horror"> Horror  </span> </a>
+                <a href="./category.php?c=thriller"> <span id="thriller"> Thriller  </span> </a>
+                <a href="./category.php?c=romance"> <span id="romance"> Romance  </span> </a>
+                <a href="./category.php?c=crime"> <span id="crime"> Crime  </span> </a>
 
             </div>
         </div>
