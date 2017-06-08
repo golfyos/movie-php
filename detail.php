@@ -153,8 +153,13 @@
                 $result4 = $con->query($sql4);
             }
         ?>
+
+        <?php $sql3 = "SELECT * FROM review WHERE id = '$id' order by r_id desc" ;
+        
+                $result3 = $con->query($sql3);
+        ?>
         <div class="review">
-        <p style="color: blue;"> Review: </p>
+        <p style="color: blue;"> Review(<?= $result3->num_rows ?> รายการ): </p>
             <form action="?id=<?= $id ?>" method="post">
                 <?php if($check) { ?>
                     <textarea rows="8" cols="100" id="comment" name="comment" value=""></textarea>
@@ -165,16 +170,15 @@
             </form>
 
         <?php
-            $sql3 = "SELECT * FROM review WHERE id = '$id'";
-            $result3 = $con->query($sql3);
+            
             if($result3->num_rows>0){
         ?>
         <?php
                 while($row3 = $result3->fetch_assoc()){
         ?>
-                    <div class="comment"><?php
+                    <div class="comment">===<?php
                     echo $row3['uname']."  ";
-                    echo $row3['dated']."<br>";
+                    echo $row3['dated']."===<br>";
                     echo $row3['comment']."<br><br>";?>
                     </div>
         <?php

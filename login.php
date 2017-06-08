@@ -41,6 +41,9 @@
                     if(res==0){
                         ok = false;
                         document.getElementById("errMsg").style.display = "inline";
+                        setTimeout(function(){
+                            document.getElementById("errMsg").style.display = "none";
+                        }, 2000);
                         //alert("WRONG USERNMAE OR PASS");
                     }
                 }

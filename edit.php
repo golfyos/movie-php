@@ -6,56 +6,56 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <style>
-.bar .inside .dropbtn {
-   height : 70%;
-    background-color: black;
-    color: white;
-    padding: 16px;
-    padding-top: 1%;
-    padding-right: 1%;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: Courier New, Courier, monospace;
-    border: none;
-    cursor: pointer;
-}
+        .bar .inside .dropbtn {
+        height : 70%;
+            background-color: black;
+            color: white;
+            padding: 16px;
+            padding-top: 1%;
+            padding-right: 1%;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: Courier New, Courier, monospace;
+            border: none;
+            cursor: pointer;
+        }
 
-.bar .inside .dropdown {
-    position: relative;
-    display: inline-block;
-}
+        .bar .inside .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-.bar .inside .dropdown-content {
-    display: none;
-    position: absolute;
-    color : white;
-    background-color: black;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+        .bar .inside .dropdown-content {
+            display: none;
+            position: absolute;
+            color : white;
+            background-color: black;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-.bar .inside .dropdown-content a {
-    background-color: black;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+        .bar .inside .dropdown-content a {
+            background-color: black;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
 
-.bar .inside .dropdown-content a:hover {
-    color : yellowgreen;
-}
+        .bar .inside .dropdown-content a:hover {
+            color : yellowgreen;
+        }
 
-.bar .inside .dropdown:hover .dropdown-content {
-    display: block;
-    background-color: black;
-}
+        .bar .inside .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: black;
+        }
 
-.bar .inside .dropdown:hover .dropbtn {
-    color : yellowgreen;
-    background-color: black;    
-}
+        .bar .inside .dropdown:hover .dropbtn {
+            color : yellowgreen;
+            background-color: black;    
+        }
             .alert {
                 padding: 20px;
                 background-color: #f44336;
@@ -145,7 +145,6 @@
                         setTimeout(function(){
                             window.location.replace("./profile.php");
                         }, 3000);
-                        
                     }
                     redirec();
                 </script>
@@ -153,6 +152,7 @@
         <?php
                 //header("Location: ./profile.php");
             }
+            else{
         ?>
         <div id="profile">
             <form action="./edit.php" method="post">
@@ -167,7 +167,7 @@
 
                             ?>
                 
-                        <p>  Username: <input type="" name="uname"  value="<?= $row['uname'] ?>" disabled > </p>
+                        <p>  Username: <input style="background-color:rgb(179,179,173);" type="" name="uname"  value="<?= $row['uname'] ?>" disabled > </p>
                         <p>  First Name:  <input type="" name="fname" required > </p>
                         <p>  Last Name: <input type="" name="lname" required> </p>
                         <p>  Email: <input type="" name="email" required> </p>
@@ -181,7 +181,7 @@
                 <button type="submit">Save</button>
             </form>
 
-            
+            <?php } ?>
         </div>
     </body>
 
