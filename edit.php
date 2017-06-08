@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <link rel="stylesheet" type="text/css" href="./css/edit.css">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -56,6 +56,9 @@
                 <a href="#" id="category"> Category</a> 
             </div>
         </div>
+        <div class="header"> Edit Profile </div>
+        <div class="edit">
+            
         <?php
 
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -81,7 +84,7 @@
                     }
                     redirec();
                 </script>
-                
+        </div>
         <?php
                 //header("Location: ./profile.php");
             }

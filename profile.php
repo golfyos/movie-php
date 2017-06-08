@@ -1,6 +1,6 @@
 <html>
     <head>
-          <link rel="stylesheet" type="text/css" href="./css/index.css">
+          <link rel="stylesheet" type="text/css" href="./css/profile.css">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@
                 <a href="#" id="category"> Category</a> 
             </div>
         </div>
-
+        <div class="header"> Profile </div>
         <div id="profile">
             <?php
                 require './config/db_config.php';
