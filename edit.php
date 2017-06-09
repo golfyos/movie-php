@@ -96,14 +96,16 @@
                         <p>  First Name:  <input type="" name="fname" required > </p>
                         <p>  Last Name: <input type="" name="lname" required> </p>
                         <p>  Email: <input type="" name="email" required> </p>
+                        <button type="reset">Reset</button>
+                        <button type="submit">Save</button>
                             <?php
                         }
                     }else{
                         echo "<h1> Please Login First </h1>";
+                        
                     }
                 ?>
-                <button type="reset">Reset</button>
-                <button type="submit">Save</button>
+                
             </form>
 
             <?php } ?>

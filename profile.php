@@ -58,15 +58,13 @@
                     <p>   First Name:  <?=$row["fname"]?> </p>
                     <p>   Last Name: <?=$row["lname"]?> </p>
                     <p>   Email: <?=$row["email"]?> </p>
+                    <a href="./edit.php"> <button type="text">Edit</button> </a>
                         <?php
                     }
                 }else{
                     echo "<h1> Please Login First </h1>";
                 }
             ?>
-
-            <a href="./edit.php"> <button type="text">Edit</button> </a>
-            
 
         </div>
     </body>
